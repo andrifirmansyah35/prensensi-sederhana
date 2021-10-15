@@ -14,7 +14,7 @@
           <img src="{{ asset('adminLTE') }}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Firmansyah ID</a>
+          <a href="#" class="d-block">{{ auth()->user()->name }}</a>
         </div>
       </div>
 
@@ -57,7 +57,7 @@
             <ul class="nav nav-treeview">
 
               @if(auth()->user()->level == "karyawan")
-              <li class="nav-item">
+              <li class="nav-item"> 
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Presensi Per Karyawan</p>

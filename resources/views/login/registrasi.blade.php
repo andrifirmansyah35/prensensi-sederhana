@@ -18,15 +18,23 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <p ><b>Registrasi</b>User</p>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form action="{{ route('postlogin') }}" method="post">
+      <form action="{{ route('simpanregistrasi') }}" method="post">
         {{ csrf_field() }}
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Full Name" name="name">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email" name="email">
           <div class="input-group-append">
@@ -35,6 +43,7 @@
             </div>
           </div>
         </div>
+
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="password">
           <div class="input-group-append">
@@ -43,19 +52,20 @@
             </div>
           </div>
         </div>
+
         <div class="row">
-          <div class="col-8">
-            
-          </div>
           <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          <div class="col">
+            <button type="submit" class="btn btn-primary btn-block">Daftar</button>
           </div>
           <!-- /.col -->
         </div>
-        <p class="mb-0">
-          <a href="{{ route('registrasi') }}" class="text-center">Register a new membership</a>
-        </p>
+
+        <div class="row mt-2">
+          <div class="col">
+            <a href="{{ route('login') }}" class="text-center">Login Sekarang</a>
+          </div>
+        </div>
       </form>
     </div>
     <!-- /.login-card-body -->
@@ -63,12 +73,6 @@
 </div>
 <!-- /.login-box -->
 
-{{-- <!-- jQuery -->    diganti dengan include(Template script)
-<script src="{{ asset('adminLTE') }}/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('adminLTE') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('adminLTE') }}/dist/js/adminlte.min.js"></script> --}}
 @include('templates.script')
 
 </body>
